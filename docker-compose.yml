@@ -1,0 +1,22 @@
+version: '3'
+services:
+  go:
+    container_name: go
+    build:
+        context: .
+        dockerfile: ./Dockerfile
+    volumes:
+      - ./:/workspace
+    tty: true
+  # db:
+  #     container_name: mysql
+  #     image: mysql:8.0
+  #     volumes:
+  #         - ./.data/mysql:/var/lib/mysql
+  #     ports:
+  #         - "3306:3306"
+  #     environment:
+  #         MYSQL_ROOT_PASSWORD: rootpw
+  #         MYSQL_DATABASE: develop
+  #         MYSQL_USER: develop
+  #         MYSQL_PASSWORD: p@ssw0rd
